@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function About(props) {
 
-    const leaderslist = props.leaders.map((leader) => {
+    const RenderList = ({leader}) => {
         return (
           <div key={leader.id} className="col-12 mt-5">
             <Media tag="li">
@@ -20,7 +20,7 @@ function About(props) {
             </Media>
           </div>
         );
-    });
+    };
 
     return(
         <div className="container">
@@ -77,9 +77,12 @@ function About(props) {
                     <h2>Corporate Leadership</h2>
                 </div>
                 <div className="col-12">
-                    <Media list>
-                        {leaderslist}
-                    </Media>
+                    {
+                        props.leaders.map((leader) =>{
+                            return(<RenderList leader={leader}/>);
+                        })
+                    }
+                    
                 </div>
             </div>
         </div>

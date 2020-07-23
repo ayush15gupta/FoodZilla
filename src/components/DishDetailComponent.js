@@ -4,27 +4,14 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody,
     CardTitle ,Breadcrumb, BreadcrumbItem} from 'reactstrap';
 import { Link } from 'react-router-dom';
-    function CommentList({comments}) {
-        
-        return (
-          <ul className="list-unstyled">
-            {comments.map(comment => 
-            <li key={comment.id}>
-                <p>{comment.comment}</p>
-                <p>--{comment.author} , {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
-            </li>
-            )}
-          </ul>
-        );
-    }
+    
     function RenderComments({comments}){
         if(comments.length==0)
         {  
             return(
                 <div></div>
             );
-
-                
+  
         } 
         else{
             
@@ -32,9 +19,15 @@ import { Link } from 'react-router-dom';
                 
                 <div className="col-12 col-md-5 m-1">
                     <h4>Comments</h4>
-                    <CommentList comments={comments}/>
-                    
-                     
+                    <ul className="list-unstyled">
+                        {comments.map(comment => 
+                        <li key={comment.id}>
+                            <p>{comment.comment}</p>
+                            <p>--{comment.author} , {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
+                        </li>
+                        )}
+                    </ul>
+                   
                 </div>
                 
             );
