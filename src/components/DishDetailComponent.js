@@ -6,7 +6,6 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody,
 import { Link } from 'react-router-dom';
     function CommentList({comments}) {
         
-      
         return (
           <ul className="list-unstyled">
             {comments.map(comment => 
