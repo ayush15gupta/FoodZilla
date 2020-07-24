@@ -38,11 +38,7 @@ class Contact extends Component {
         alert('Current State is: ' + JSON.stringify(this.state));
         event.preventDefault();
     }
-    handleSubmit(event) {
-        console.log('Current State is: ' + JSON.stringify(this.state));
-        alert('Current State is: ' + JSON.stringify(this.state));
-        event.preventDefault();
-    }   
+      
     handleBlur = (field) => (evt) =>{
         this.setState({
            touched:{...this.state.touched, [field]:true}

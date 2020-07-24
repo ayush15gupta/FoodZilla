@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-import { Card, CardImg, CardImgOverlay, CardText, CardBody,
+import { Card, CardImg,  CardText, CardBody,
     CardTitle ,Breadcrumb, BreadcrumbItem} from 'reactstrap';
 import { Link } from 'react-router-dom';
     
     function RenderComments({comments}){
-        if(comments.length==0)
+        if(comments.length===0)
         {  
             return(
                 <div></div>
