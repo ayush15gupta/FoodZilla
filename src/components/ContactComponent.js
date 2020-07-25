@@ -20,6 +20,7 @@ class Contact extends Component {
         alert('Current State is: ' + JSON.stringify(values));
         
     }
+    
    
     render(){
     
